@@ -1,6 +1,74 @@
 <?php 
-
 declare(strict_types=1);
+
+
+$integer=5;
+switch ($integer) {
+	 case 1:
+		echo 'vous avez tapé 1';
+		break;
+	case 2:
+		echo 'vous avez tapé 2';
+		break;
+	case 3:
+		echo 'vous avez tapé 3';
+		break;
+	
+	default:
+		echo 'je ne conprend pas';
+		break;
+}
+
+
+session_start();
+$reload=0;
+if (!isset($_SESSION['reload'])){
+	$_SESSION['reload'] =$reload;
+} else {
+	$reload=$_SESSION['reload'];
+}
+$reload++;
+echo $reload;
+$_SESSION['reload']=$reload;
+
+
+
+
+
+
+
+$mailer = 'service de mail';
+$showMyName = function($name) use ($mailer){
+	$mailer = 'nouveau mail';
+};
+$showMyName('mohamed');
+echo $mailer,
+
+
+
+
+$letters =['a','b','c'];
+$letters = array_map(
+	function($lettre) { 
+		return strtoupper($lettre);
+	}
+    , $letters);
+echo "<pre>";
+var_dump($letters);
+echo "<pre>";
+
+
+function test(){
+	echo 'test';
+}
+
+$call = function(){
+	echo 'test';
+};
+
+$call();
+
+
 
 function increment(int $a) : int{
 /*	$a++;
@@ -22,12 +90,14 @@ incriment2();
 incriment2();
 incriment2();
 
-die;
+
+
+
 echo "<pre>";
 $a =1;
 $b=2;
 function add(int $a , int $b) : int {
-	/*    global $a; $b ;   annule le passage par reference	*/
+	    global $a; $b ;  /* annule le passage par reference*/	
 	return $a =$a + $b;
 }
 
@@ -85,3 +155,11 @@ if ($res === null) {
 	echo $res;
 }
 echo "<pre>";
+
+
+
+
+
+
+
+
